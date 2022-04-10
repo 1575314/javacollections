@@ -1,0 +1,61 @@
+package br.com.generation.collection;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+
+public class collectionjava {
+	
+
+	public static void main(String[] args) {
+ //Crie uma um programa para trabalhar com estoque de uma loja, o programa deverá
+	//trabalhar com Collection do tipo List do Java para manipular os dados desse estoque, o
+	//programa deverá atender as seguintes funcionalidades:
+	//Armazenar dados da List
+	//Remover dados da list
+	//Atualizar dados da list.
+	//Apresentar todos os dados da list.
+		   
+     String articuloa = "livro";
+      String articulob ="borracha";
+	 String articuloc ="marca texto";
+	 
+	 ArrayList<String> articulos =new ArrayList<>();
+	 articulos.add( articuloa);
+	 articulos.add( articulob);
+	 articulos.add( articuloc);
+	
+	 System.out.println("Lista de productos:" + articulos);
+	 
+	 Scanner leia= new Scanner(System.in);
+	 System.out.println("deseja adicionar ou remover articulo? Digite 1 para adicionar e 2 para remover ");
+	 int num=leia.nextInt();
+	 
+	 if(num == 1) {
+		 System.out.println("Nome do articulo: ");
+		 String articulo= leia.next();
+		 articulos.add(articulo);
+	 }
+	 else if (num==2) {
+		 System.out.println("Qual articulo deseja remover: ");
+		 
+		 int quantidade=articulos.size();
+		 System.out.println(quantidade);
+		 for(int i=0; i<quantidade; i++ ) {
+			 System.out.println((i+1)+articulos.get(i));
+		 }
+		 System.out.println("Digite o numero correspondiente a seu articulo:");
+		 int numarticulo =leia.nextInt();
+		 articulos.remove(numarticulo -1);
+		 System.out.println();
+		 System.out.println("su nova lista é: +articulos");
+	 }
+	 else { 
+		 System.out.println("incorecto,intente de novo");
+	 }
+	 Collections.sort(articulos);
+	 System.out.println("articulos" + articulos);
+	 
+    }
+}
